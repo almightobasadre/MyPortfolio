@@ -74,6 +74,10 @@ a {
     }
     .control:hover{
         background-color: var(--color-secondary);
+        box-shadow: none;
+        i{
+            color: var(--color-white);
+        }
 
     }
 }
@@ -161,7 +165,9 @@ a {
     align-self: flex-start;
     align-items: center;
     overflow: hidden;
-    .btn-text { padding: 0 2rem; }
+    .btn-text {
+        padding: 0 2rem;
+    }
     .btn-icon {
         background-color: var(--color-secondary);
         display: flex;
@@ -192,7 +198,7 @@ a {
 }
 
 .main-title {
-    padding-top: 8rem;
+    padding-top: 3.5rem;
     text-align: center;
     h2 {
         position: relative;
@@ -501,6 +507,7 @@ a {
         .contact-icon {
             display: flex;
             margin-top: 2rem;
+            margin-bottom: 2rem;
             a {
                 display: flex;
                 align-items: center;
@@ -552,9 +559,55 @@ a {
                 margin-left: 1.5rem;
             }
         }
-        .submit-btn {
+        .submit-btn{
+            border-radius: 0;
+            background-color: var(--color--primary);
+            cursor: pointer;
+            position: relative;
+            color: var(--color-white);
+            font-size: 18px;
+            border: 1px solid var(--color-secondary);
             display: flex;
-            justify-content: flex-start;
+            align-self: flex-start;
+            align-items: center;
+            overflow: hidden;
+            .submit-text {
+                padding: 0 2rem;
+                font-weight: 600;;
+                font-family: 'Crimson Text', serif;
+            }
+            .submit-icon {
+                background-color: var(--color-secondary);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 0;
+                padding: 1rem;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                transform: translateX(100%);
+                transition: all .4s ease-out;
+                z-index: -1;
+            }
+            &:hover {
+                transition: all .4s ease-out;
+                &::before {
+                    width: 100%;
+                    height: 100%;
+                    background-color: var(--color-secondary);
+                    transform: translateX(0);
+                    transition: all .4s ease-out;
+                }
+            }
+        }
+        #msg{
+            margin-top: 20px;
+            color: var(--color-grey-2);
+            display: block;
         }
     }
 }
